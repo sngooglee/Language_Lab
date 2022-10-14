@@ -1,0 +1,18 @@
+EX1 MACRO &A, &B
+LDA &A
+STA &B
+MEND
+
+MyMacro MACRO &p1, &p2, &p3
+     MOV AX, &p1
+     MOV BX, &p2
+     MOV CX, &p3
+MEND
+
+SAMPLE START 1000
+EX1 N1,N2
+MyMacro 1, 2, 3
+MyMacro 4, 5, DX
+N1 RESW 1
+N2 RESW 1
+END
